@@ -12,14 +12,14 @@ def getDomains(inp_file):
 
     print("Urls to query " + str(len(sites)))
 
-    outF = open("OutFile.txt", "a")
+    outputFile = open("OutFile.txt", "a")
 
     for site in sites:
         parsed_uri = urlparse(site)
         result = '{uri.netloc}'.format(uri=parsed_uri)
-        outF.writelines(result + "\n")
+        outputFile.writelines(result + "\n")
 
-    outF.close()
+    outputFile.close()
 
 def main():
     parser = argparse.ArgumentParser(description="Script to extract domain names from a list of urls")
